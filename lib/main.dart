@@ -20,11 +20,13 @@ class MyHomePage extends StatelessWidget {
           title: Text('Ezi app'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
               color: Colors.blue,
               child: Container(
-                width: 100,
+                width: double.infinity,
                 child: Text('Chart'),
               ),
               elevation: 5,
@@ -32,8 +34,7 @@ class MyHomePage extends StatelessWidget {
             Card(
               color: Colors.blue,
               child: Container(
-                width: double.infinity,
-                height: 30,
+                width: 100,
                 child: Text('Chart'),
               ),
               elevation: 5,
