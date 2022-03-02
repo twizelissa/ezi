@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't2',
       title: 'Weekly groceries',
-      amount: 100,
+      amount: 100.25,
       date: DateTime.now(),
     )
   ];
@@ -53,14 +53,46 @@ class MyHomePage extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 30,
+                        ),
+                        // color: Colors.grey,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.purple,
+                            width: 2,
+                          ),
+                        ),
+                        padding: EdgeInsets.all(10),
+
                         child: Text(
                           tx.amount.toString(),
+                          style: TextStyle(
+                            color: Colors.purple,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(tx.title),
-                          Text(tx.date.toString()),
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          Text(
+                            tx.date.toString(),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 83, 80, 80),
+                            ),
+                          ),
                         ],
                       )
                     ],
