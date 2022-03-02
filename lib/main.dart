@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't2',
       title: 'Weekly groceries',
-      amount: 200.45,
+      amount: 100,
       date: DateTime.now(),
     )
   ];
@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Card(
               color: Colors.blue,
@@ -50,7 +50,21 @@ class MyHomePage extends StatelessWidget {
             Column(
               children: transactions.map((tx) {
                 return Card(
-                  child: Text(tx.title),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          tx.amount.toString(),
+                        ),
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(tx.title),
+                          Text(tx.date.toString()),
+                        ],
+                      )
+                    ],
+                  ),
                 );
               }).toList(),
             )
