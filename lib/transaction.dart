@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
+class Transaction {
+  final String id;
+  final String title;
+  final double amount;
+  final DateTime date;
 
-class Transaction extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
+  Transaction({this.id, this.title, this.amount, this.date});
 }
