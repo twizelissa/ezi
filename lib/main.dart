@@ -79,8 +79,8 @@ class MyHomePage extends StatelessWidget {
                         child: Text('Add Transaction'),
                         textColor: Colors.purple,
                         onPressed: () {
-                          // print(titleInput);
-                          // print(amountInput);
+                          print(titleController.text);
+                          print(amountController.text);
                         },
                       ),
                     ]),
