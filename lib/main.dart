@@ -67,7 +67,8 @@ class MyHomePage extends StatelessWidget {
                         padding: EdgeInsets.all(10),
 
                         child: Text(
-                          tx.amount.toString(),
+                          //string interpretion
+                          '\$${tx.amount}',
                           style: TextStyle(
                             color: Colors.purple,
                             fontWeight: FontWeight.bold,
