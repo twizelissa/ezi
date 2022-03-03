@@ -36,9 +36,10 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Ezi app'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+          shrinkWrap: true,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
               color: Colors.blue,
