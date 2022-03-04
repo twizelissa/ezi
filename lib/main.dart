@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'model/transaction.dart';
+import './widget/transaction_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,20 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
-      id: 't1',
-      title: 'New laptop',
-      amount: 200.45,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Weekly groceries',
-      amount: 100.25,
-      date: DateTime.now(),
-    )
-  ];
   // String titleInput;
   // String amountInput;
   final titleController = TextEditingController();
@@ -86,61 +71,7 @@ class MyHomePage extends StatelessWidget {
                     ]),
               ),
             ),
-            Column(
-              children: transactions.map((tx) {
-                return Card(
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.symmetric(
-                          vertical: 20,
-                          horizontal: 30,
-                        ),
-                        // color: Colors.grey,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.purple,
-                            width: 2,
-                          ),
-                        ),
-                        padding: EdgeInsets.all(10),
-
-                        child: Text(
-                          //string interpretion
-                          '\$${tx.amount}',
-                          style: TextStyle(
-                            color: Colors.purple,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            tx.title,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            ),
-                          ),
-                          Text(
-                            // DateFormat('yyy-MM-dd').format(tx.date),
-                            DateFormat.yMMMd().format(tx.date),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color.fromARGB(255, 83, 80, 80),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              }).toList(),
-            )
+            TransactionList(),
           ],
         ));
   }
