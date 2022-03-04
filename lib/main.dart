@@ -20,21 +20,25 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Ezi app'),
         ),
-        body: ListView(
-          shrinkWrap: true,
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Card(
-              color: Colors.blue,
-              child: Container(
-                width: double.infinity,
-                child: Text('Chart'),
+        body: SingleChildScrollView(
+          child: Column(
+            //more advaisable
+            // ListView
+            // shrinkWrap: true,
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Card(
+                color: Colors.blue,
+                child: Container(
+                  width: double.infinity,
+                  child: Text('Chart'),
+                ),
+                elevation: 5,
               ),
-              elevation: 5,
-            ),
-            UserTransaction(),
-          ],
+              UserTransaction(),
+            ],
+          ),
         ));
   }
 }
