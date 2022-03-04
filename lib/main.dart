@@ -17,28 +17,29 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Ezi app'),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            //more advaisable
-            // ListView
-            // shrinkWrap: true,
-            // mainAxisAlignment: MainAxisAlignment.start,
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Card(
-                color: Colors.blue,
-                child: Container(
-                  width: double.infinity,
-                  child: Text('Chart'),
-                ),
-                elevation: 5,
+      appBar: AppBar(
+        title: Text('Ezi app'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          //more advaisable
+          // ListView
+          // shrinkWrap: true,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Card(
+              color: Colors.blue,
+              child: Container(
+                width: double.infinity,
+                child: Text('Chart'),
               ),
-              UserTransaction(),
-            ],
-          ),
-        ));
+              elevation: 5,
+            ),
+            UserTransaction(),
+          ],
+        ),
+      ),
+    );
   }
 }
