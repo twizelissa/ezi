@@ -1,6 +1,5 @@
-import 'package:ezi/widget/newTransaction.dart';
+import './widget/userTransaction.dart';
 import 'package:flutter/material.dart';
-import './widget/transaction_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,8 +33,7 @@ class MyHomePage extends StatelessWidget {
               ),
               elevation: 5,
             ),
-            NewTransaction(),
-            TransactionList(),
+            UserTransaction(),
           ],
         ));
   }
