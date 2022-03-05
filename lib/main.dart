@@ -19,6 +19,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ezi app'),
+        leading: Icon(Icons.menu),
       ),
       body: SingleChildScrollView(
         child: Column(
