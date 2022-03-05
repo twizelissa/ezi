@@ -20,6 +20,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Ezi app'),
         leading: Icon(Icons.menu),
+        actions: <Widget>[IconButton(icon: Icon(Icons.add), onPressed: () {})],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -40,6 +41,10 @@ class MyHomePage extends StatelessWidget {
             UserTransaction(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }
