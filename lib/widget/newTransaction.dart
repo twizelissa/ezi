@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class NewTransaction extends StatefulWidget {
   final Function newTx;
 
-
   NewTransaction(this.newTx);
 
   @override
@@ -25,6 +24,7 @@ class _NewTransactionState extends State<NewTransaction> {
       enteredTitle,
       enteredAmount,
     );
+    Navigator.of(context).pop();
   }
 
   @override
@@ -49,7 +49,6 @@ class _NewTransactionState extends State<NewTransaction> {
                 controller: amountController,
                 keyboardType: TextInputType.number,
                 onSubmitted: (_) => submitData(),
-
               ),
               FlatButton(
                 child: Text('Add Transaction'),
