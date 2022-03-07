@@ -11,11 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ezi app',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.amber
-        ),
-    
+      theme: ThemeData(primarySwatch: Colors.purple, accentColor: Colors.amber),
       home: MyHomePage(),
     );
   }
@@ -31,17 +27,17 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't1',
       title: 'New laptop',
-      amount: 200.45,
+      amount: 20000,
       date: DateTime.now(),
     ),
     Transaction(
       id: 't2',
       title: 'Weekly groceries',
-      amount: 100.25,
+      amount: 1000,
       date: DateTime.now(),
     )
   ];
-  void _addNewTransaction(String txTitle, double txAmount) {
+  void _addNewTransaction(String txTitle, int txAmount) {
     final newTx = Transaction(
       title: txTitle,
       amount: txAmount,
