@@ -8,14 +8,15 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return MaterialApp(
       title: 'Ezi app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.black, 
-        fontFamily: 'Quicksand',
-        // appBarTheme: AppBarTheme(textTheme: ThemeData.light().textTheme.copyWith(title: TextStyle(fontFamily: 'OpenSans',fontSize: 20)))
-      ),
+          primarySwatch: Colors.blue,
+          accentColor: Colors.black,
+          fontFamily: 'Quicksand',
+          appBarTheme: AppBarTheme(
+              textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 20)))),
       home: MyHomePage(),
     );
   }
@@ -69,7 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ezi app',style: TextStyle(fontFamily: 'OpenSans'),),
+        title: Text(
+          'Ezi app',
+          style: TextStyle(fontFamily: 'OpenSans'),
+        ),
         leading: Icon(Icons.menu),
         actions: <Widget>[
           IconButton(
