@@ -1,5 +1,4 @@
 import './widget/transaction_list.dart';
-
 import './widget/newTransaction.dart';
 import 'model/transaction.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +8,13 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
       title: 'Ezi app',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.amber,
+        primarySwatch: Colors.blue,
+        accentColor: Colors.black, 
         fontFamily: 'Quicksand',
+        // appBarTheme: AppBarTheme(textTheme: ThemeData.light().textTheme.copyWith(title: TextStyle(fontFamily: 'OpenSans',fontSize: 20)))
       ),
       home: MyHomePage(),
     );
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
     Transaction(
       id: 't1',
-      title: 'New laptop',
+      title: 'Application design',
       amount: 20000,
       date: DateTime.now(),
     ),
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ezi app'),
+        title: Text('Ezi app',style: TextStyle(fontFamily: 'OpenSans'),),
         leading: Icon(Icons.menu),
         actions: <Widget>[
           IconButton(
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Container(
                 width: double.infinity,
-                child: Text('Chart'),
+                child: Text('Charting'),
               ),
               elevation: 5,
             ),
