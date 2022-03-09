@@ -12,11 +12,17 @@ class MyApp extends StatelessWidget {
       title: 'Ezi app',
       theme: ThemeData(
           primarySwatch: Colors.blue,
-          accentColor: Colors.black,
+          // accentColor: Colors.black,
           fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
           appBarTheme: AppBarTheme(
               textTheme: ThemeData.light().textTheme.copyWith(
-                  headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 20)))),
+                  headline6:
+                      TextStyle(fontFamily: 'Quicksand', fontSize: 20)))),
       home: MyHomePage(),
     );
   }
@@ -72,7 +78,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(
           'Ezi app',
-          style: TextStyle(fontFamily: 'OpenSans'),
+          style: TextStyle(
+              fontFamily: 'OpenSans',
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
         ),
         leading: Icon(Icons.menu),
         actions: <Widget>[
@@ -84,10 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          //more advaisable
-          // ListView
-          // shrinkWrap: true,
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
