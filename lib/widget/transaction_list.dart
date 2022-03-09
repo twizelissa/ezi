@@ -11,60 +11,66 @@ class TransactionList extends StatelessWidget {
     return Container(
       height: 300,
       child: ListView(
-        children: transactions.map((tx) {
-          return Card(
-            child: Row(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 30,
-                  ),
-                  // color: Colors.grey,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Theme.of(context).primaryColor,
-                      width: 2,
-                    ),
-                  ),
-                  padding: EdgeInsets.all(10),
+        children: transactions.isEmpty
+            ? Column(
+                children: <Widget>[
+                  Text('Nothing to show'),
+                ],
+              )
+            : transactions.map((tx) {
+                return Card(
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 30,
+                        ),
+                        // color: Colors.grey,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                            width: 2,
+                          ),
+                        ),
+                        padding: EdgeInsets.all(10),
 
-                  child: Text(
-                    //string interpretion
-                    // '\$${tx.amount.toStringAsFixed(2)}', for dollars
-                    '${tx.amount} RWF',
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                        child: Text(
+                          //string interpretion
+                          // '\$${tx.amount.toStringAsFixed(2)}', for dollars
+                          '${tx.amount} RWF',
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          Text(
+                            // DateFormat('yyy-MM-dd').format(tx.date),
+                            DateFormat.yMMMd().format(tx.date),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 83, 80, 80),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      tx.title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                    Text(
-                      // DateFormat('yyy-MM-dd').format(tx.date),
-                      DateFormat.yMMMd().format(tx.date),
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Color.fromARGB(255, 83, 80, 80),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          );
-        }).toList(),
+                );
+              }).toList(),
       ),
     );
   }
