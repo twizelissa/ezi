@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NewTransaction extends StatefulWidget {
   final Function newTx;
 
-  NewTransaction(this.newTx);
+  const NewTransaction(this.newTx);
 
   @override
   State<NewTransaction> createState() => _NewTransactionState();
@@ -32,12 +32,12 @@ class _NewTransactionState extends State<NewTransaction> {
     return Card(
       elevation: 5,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               TextField(
-                decoration: InputDecoration(labelText: 'Title'),
+                decoration: const InputDecoration(labelText: 'Title'),
                 controller: titleController,
                 onSubmitted: (_) => submitData(),
                 // onChanged: (val) {
@@ -45,14 +45,14 @@ class _NewTransactionState extends State<NewTransaction> {
                 // },
               ),
               TextField(
-                decoration: InputDecoration(labelText: 'Amount'),
+                decoration: const InputDecoration(labelText: 'Amount'),
                 controller: amountController,
                 keyboardType: TextInputType.number,
                 onSubmitted: (_) => submitData(),
               ),
               FlatButton(
-                child: Text('Add Transaction'),
-                textColor: Colors.purple,
+                child: const Text('Add Transaction'),
+                textColor: Colors.blue,
                 onPressed: submitData,
               )
             ]),
